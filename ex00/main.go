@@ -4,7 +4,6 @@ import "piscine"
 
 func main() {
 	tetrimminoLength := 4
-	width := 4
 	tetrimino := make([][][]rune, tetrimminoLength)
 	square := [][]rune{
 		{'.', '.', '.', '.'},
@@ -31,6 +30,16 @@ func main() {
 		{'.', '.', '.', '.'},
 		{'.', '.', '.', '.'},
 		{'.', '.', '.', '.'}}
-	piscine.FillSquare(tetrimino, square, tetrimminoLength, width, 0, 0)
+	tetriminoIndex := 0
+	blankNumber := 0
+	squareIndex := 0
+	success := piscine.FillSquare(tetrimino, square, tetriminoIndex, tetrimminoLength, squareIndex, blankNumber)
+	for success == false {
+		// 正方形を拡張
+		//expand(square)
+		// 空白文字を増やす
+		//increase(blankNumber)
+		success = piscine.FillSquare(tetrimino, square, tetriminoIndex, tetrimminoLength, squareIndex, blankNumber)
+	}
 	piscine.PrintSquare(square)
 }
