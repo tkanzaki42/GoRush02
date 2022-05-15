@@ -33,12 +33,12 @@ func main() {
 	tetriminoIndex := 0
 	blankNumber := 0
 	squareIndex := 0
-	if isInvalid(square){
+	if piscine.IsInvalid(square){
 		println("異常な入力");
 		return 
 	}
 	for _,t := range tetrimino{ 
-		if isInvalid(t){
+		if piscine.IsInvalid(t){
 			println("異常な入力");
 			return 
 		}	

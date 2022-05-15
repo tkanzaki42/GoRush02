@@ -1,6 +1,6 @@
-package main
+package piscine
 
-func isInvalid(args [][]rune) bool {
+func IsInvalid(args [][]rune) bool {
 	if len(args) == 0 { // 空でないか？0ならそもそもmapが入ってきてない。
 		return true //不正の場合
 	}
