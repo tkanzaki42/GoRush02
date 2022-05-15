@@ -33,6 +33,25 @@ func main() {
 	tetriminoIndex := 0
 	blankNumber := 0
 	squareIndex := 0
+	if isInvalid(square){
+		println("異常な入力");
+		return 
+	}
+	for _,t := range tetrimino{ 
+		if isInvalid(t){
+			println("異常な入力");
+			return 
+		}	
+	} 
+
+/*
+	for _,t := range argv[1: ]{ 
+		if isInvalid(t){
+			println("異常な入力");
+			return 
+		}	
+	} 
+	*/
 	success := piscine.FillSquare(tetrimino, square, tetriminoIndex, tetrimminoLength, squareIndex, blankNumber)
 	for success == false {
 		// 正方形を拡張
